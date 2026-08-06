@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get expert counseling, university placement, and visa application support to study abroad.">
+    <title>Study Abroad | Cambridge Institute</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css?v=1.2">
+    
+    <style>
+        /* Destination Template Specific Styles */
+        .dest-hero-section {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            color: var(--bg-white);
+            margin-top: 0;
+        }
+
+        .dest-hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(0, 36, 91, 0.4) 0%, rgba(0, 36, 91, 0.8) 100%);
+            z-index: 1;
+        }
+
+        .dest-hero-container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .dest-hero-flag {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+
+        .dest-hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            font-family: var(--font-heading);
+            margin-bottom: 12px;
+        }
+
+        .dest-hero-tagline {
+            font-size: 1.25rem;
+            font-weight: 500;
+            max-width: 600px;
+            opacity: 0.9;
+        }
+
+        /* Stats Grid */
+        .dest-stats-section {
+            background-color: var(--bg-white);
+            padding: 40px 0;
+        }
+
+        .dest-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .dest-stat-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(14px) saturate(180%);
+            -webkit-backdrop-filter: blur(14px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 10px 30px rgba(0, 36, 91, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .dest-stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 36, 91, 0.12);
+        }
+
+        .dest-stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--brand-blue);
+            color: var(--bg-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .dest-stat-info h5 {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .dest-stat-info p {
+            font-size: 0.95rem;
+            font-weight: 750;
+            color: var(--brand-blue);
+        }
+
+        /* Detail Content Layout */
+        .dest-content-section {
+            padding: 60px 0;
+            background-color: var(--bg-white);
+        }
+
+        .dest-content-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .dest-main-text h3 {
+            font-size: 1.8rem;
+            color: var(--brand-blue);
+            margin-bottom: 16px;
+            font-family: var(--font-heading);
+        }
+
+        .dest-main-text p {
+            font-size: 1rem;
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .dest-card-block {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1.5px solid rgba(255, 255, 255, 0.8);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 36, 91, 0.08);
+        }
+
+        .dest-uni-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .dest-uni-list li {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dest-uni-list li i {
+            color: var(--brand-red);
+            font-size: 0.9rem;
+        }
+
+        .dest-checklist {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .dest-checklist li {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .dest-checklist li i {
+            color: var(--brand-green);
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+
+        /* Sticky Form Sidebar */
+        .dest-sidebar {
+            position: relative;
+        }
+
+        .sticky-form-card {
+            position: sticky;
+            top: 120px;
+            background-color: var(--brand-blue);
+            color: var(--bg-white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 36, 91, 0.15);
+        }
+
+        .sticky-form-card h4 {
+            font-size: 1.4rem;
+            font-family: var(--font-heading);
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .sticky-form-card p {
+            font-size: 0.85rem;
+            opacity: 0.85;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .sticky-form-card .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .sticky-form-card label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .sticky-form-card input, .sticky-form-card select {
+            padding: 12px 16px;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--bg-white);
+            font-size: 0.9rem;
+        }
+
+        .sticky-form-card input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .sticky-form-card input:focus, .sticky-form-card select:focus {
+            outline: none;
+            border-color: var(--bg-white);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .sticky-form-card select option {
+            background-color: var(--brand-blue);
+            color: var(--bg-white);
+        }
+
+        .sticky-submit-btn {
+            background-color: var(--brand-red);
+            color: var(--bg-white);
+            width: 100%;
+            padding: 14px;
+            border-radius: 6px;
+            font-weight: 750;
+            font-size: 0.95rem;
+            margin-top: 10px;
+            transition: var(--transition-smooth);
+            text-align: center;
+        }
+
+        .sticky-submit-btn:hover {
+            background-color: var(--brand-red-hover);
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 1024px) {
+            .dest-stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .dest-content-layout {
+                grid-template-columns: 1fr;
+            }
+            .sticky-form-card {
+                position: relative;
+                top: 0;
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .dest-stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .dest-hero-title {
+                font-size: 2.5rem;
+            }
+            .dest-uni-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Utility Top Bar (Scrolls away with page) -->
+    <div class="utility-top-bar">
+        <div class="utility-container">
+            <div class="utility-left-links">
+                <a href="index.html#news-offers" id="top-bar-news-link">NEWS & OFFER</a>
+                <a href="index.html#counselor">COUNSELOR DASHBOARD</a>
+                <a href="index.html#our-branches">OUR BRANCHES</a>
+                <a href="index.html#login"><i class="fa-solid fa-user"></i> LOGIN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Main Navigation Header -->
+    <header class="main-navigation-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo-icon-svg">
+                <img src="assets/images/logo.png" alt="Cambridge Institute Logo">
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu-bar">
+                <ul class="nav-menu-links">
+                    <li class="nav-menu-item has-mega-menu">
+                        <a href="index.html#services" class="nav-menu-link">OUR SERVICES <i class="fa-solid fa-chevron-down"></i></a>
+                        <div class="nav-mega-menu services-mega-menu">
+                            <div class="services-mega-container">
+                                <div class="services-mega-left">
+                                    <h2 class="services-mega-title">Our <span class="highlight-red-text">Services</span></h2>
+                                    <p class="services-mega-desc">
+                                        Cambridge Institute offers student-focused international education services designed to support every step of your journey through expert guidance, preparation support, and global academic opportunities.
+                                    </p>
+                                </div>
+                                <div class="services-mega-right">
+                                    <ul class="services-mega-list">
+                                        <li><a href="index.html#services"><i class="fa-solid fa-chevron-right"></i> Study Abroad Counselling</a></li>
+                                        <li><a href="index.html#services"><i class="fa-solid fa-chevron-right"></i> University Application Support</a></li>
+                                        <li><a href="index.html#services"><i class="fa-solid fa-chevron-right"></i> Scholarship Guidance</a></li>
+                                        <li><a href="index.html#services"><i class="fa-solid fa-chevron-right"></i> Visa Assistance</a></li>
+                                        <li><a href="index.html#services"><i class="fa-solid fa-chevron-right"></i> Pre-Departure & Accommodation</a></li>
+                                        <li><a href="learning-center.html"><i class="fa-solid fa-chevron-right"></i> Test Preparation & Coaching</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-menu-item has-mega-menu">
+                        <a href="destination.html?country=australia" class="nav-menu-link">STUDY ABROAD <i class="fa-solid fa-chevron-down"></i></a>
+                        <div class="nav-mega-menu">
+                            <div class="mega-menu-container">
+                                <div class="mega-menu-grid">
+                                    <a href="destination.html?country=australia" class="mega-menu-item"><img src="https://flagcdn.com/w80/au.png" alt="Australia"> Australia</a>
+                                    <a href="destination.html?country=usa" class="mega-menu-item"><img src="https://flagcdn.com/w80/us.png" alt="USA"> USA</a>
+                                    <a href="destination.html?country=newzealand" class="mega-menu-item"><img src="https://flagcdn.com/w80/nz.png" alt="New Zealand"> New Zealand</a>
+                                    <a href="destination.html?country=canada" class="mega-menu-item"><img src="https://flagcdn.com/w80/ca.png" alt="Canada"> Canada</a>
+                                    <a href="destination.html?country=uk" class="mega-menu-item"><img src="https://flagcdn.com/w80/gb.png" alt="UK"> United Kingdom</a>
+                                    <a href="destination.html?country=denmark" class="mega-menu-item"><img src="https://flagcdn.com/w80/dk.png" alt="Denmark"> Denmark</a>
+                                    <a href="destination.html?country=ireland" class="mega-menu-item"><img src="https://flagcdn.com/w80/ie.png" alt="Ireland"> Ireland</a>
+                                    <a href="destination.html?country=japan" class="mega-menu-item"><img src="https://flagcdn.com/w80/jp.png" alt="Japan"> Japan</a>
+                                    <a href="destination.html?country=korea" class="mega-menu-item"><img src="https://flagcdn.com/w80/kr.png" alt="South Korea"> South Korea</a>
+                                    <a href="destination.html?country=germany" class="mega-menu-item"><img src="https://flagcdn.com/w80/de.png" alt="Germany"> Germany</a>
+                                    <a href="destination.html?country=france" class="mega-menu-item"><img src="https://flagcdn.com/w80/fr.png" alt="France"> France</a>
+                                    <a href="destination.html?country=switzerland" class="mega-menu-item"><img src="https://flagcdn.com/w80/ch.png" alt="Switzerland"> Switzerland</a>
+                                    <a href="destination.html?country=netherlands" class="mega-menu-item"><img src="https://flagcdn.com/w80/nl.png" alt="Netherlands"> Netherlands</a>
+                                    <a href="destination.html?country=finland" class="mega-menu-item"><img src="https://flagcdn.com/w80/fi.png" alt="Finland"> Finland</a>
+                                    <a href="destination.html?country=malaysia" class="mega-menu-item"><img src="https://flagcdn.com/w80/my.png" alt="Malaysia"> Malaysia</a>
+                                    <a href="destination.html?country=thailand" class="mega-menu-item"><img src="https://flagcdn.com/w80/th.png" alt="Thailand"> Thailand</a>
+                                    <a href="destination.html?country=india" class="mega-menu-item"><img src="https://flagcdn.com/w80/in.png" alt="India"> India</a>
+                                    <a href="destination.html?country=uae" class="mega-menu-item"><img src="https://flagcdn.com/w80/ae.png" alt="UAE"> UAE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-menu-item">
+                        <a href="learning-center.html" class="nav-menu-link">LEARNING CENTER</a>
+                    </li>
+                    <li class="nav-menu-item">
+                        <a href="universities.html" class="nav-menu-link">UNIVERSITY</a>
+                    </li>
+                    <li class="nav-menu-item has-dropdown">
+                        <a href="index.html#about" class="nav-menu-link">ABOUT US <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="nav-submenu">
+                            <li><a href="index.html#about">About Cambridge</a></li>
+                            <li><a href="index.html#why-choose-us">Why Choose Us</a></li>
+                            <li><a href="index.html#our-team">Our Team</a></li>
+                            <li><a href="index.html#testimonials">Student Stories</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Right Header CTA Buttons -->
+            <div class="nav-actions-block">
+                <a href="index.html#application-form-section" class="speak-with-us-btn">SPEAK WITH US</a>
+                
+                <!-- Hamburger Menu Icon -->
+                <button class="nav-hamburger-toggle" aria-label="Toggle Navigation">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dynamic Hero Section -->
+    <section class="dest-hero-section" id="dest-hero">
+        <div class="dest-hero-container">
+            <img src="" alt="Country Flag" class="dest-hero-flag-img" id="dest-flag-img" style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.35); margin-bottom: 16px; display: block;">
+            <h1 class="dest-hero-title" id="dest-title">Study in Australia</h1>
+            <p class="dest-hero-tagline" id="dest-tagline">Study Down Under and open doors to global opportunities.</p>
+        </div>
+    </section>
+
+    <!-- Dynamic Stats Section -->
+    <section class="dest-stats-section">
+        <div class="dest-stats-grid">
+            <!-- Stat 1 -->
+            <div class="dest-stat-card">
+                <div class="dest-stat-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                <div class="dest-stat-info">
+                    <h5>Key Intakes</h5>
+                    <p id="stat-intakes">Feb / July / Nov</p>
+                </div>
+            </div>
+            <!-- Stat 2 -->
+            <div class="dest-stat-card">
+                <div class="dest-stat-icon"><i class="fa-solid fa-money-bill-wave"></i></div>
+                <div class="dest-stat-info">
+                    <h5>Tuition Fees</h5>
+                    <p id="stat-fees">$20,000 - $45,000 / yr</p>
+                </div>
+            </div>
+            <!-- Stat 3 -->
+            <div class="dest-stat-card">
+                <div class="dest-stat-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                <div class="dest-stat-info">
+                    <h5>Living Costs</h5>
+                    <p id="stat-living">$21,041 - $25,000 / yr</p>
+                </div>
+            </div>
+            <!-- Stat 4 -->
+            <div class="dest-stat-card">
+                <div class="dest-stat-icon"><i class="fa-solid fa-language"></i></div>
+                <div class="dest-stat-info">
+                    <h5>English Test</h5>
+                    <p id="stat-ielts">IELTS 6.0 - 6.5 (PTE: 50+)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detail Content Layout -->
+    <section class="dest-content-section">
+        <div class="dest-content-layout">
+            <!-- Left Info Block -->
+            <div class="dest-main-text">
+                <h3>Introduction</h3>
+                <p id="dest-intro">Australia offers world-class education, a relaxed lifestyle, and excellent post-study work opportunities. It is home to several top-ranking universities globally known for research and academic excellence.</p>
+                
+                <!-- Popular Universities -->
+                <div class="dest-card-block">
+                    <h3>Popular Universities & Institutes</h3>
+                    <p>We help you secure admissions to leading educational centers in this destination, including:</p>
+                    <ul class="dest-uni-list" id="dest-unis">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+
+                <!-- Requirements Checklist -->
+                <div class="dest-card-block">
+                    <h3>General Admission Requirements</h3>
+                    <p>Before applying, ensure you fulfill the following key academic and financial criteria:</p>
+                    <ul class="dest-checklist" id="dest-reqs">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Sidebar Registration Form -->
+            <div class="dest-sidebar">
+                <div class="sticky-form-card">
+                    <h4>Free Counselling</h4>
+                    <p>Book a personalized session with our expert counsellors.</p>
+                    
+                    <form id="dest-inquiry-form">
+                        <div class="form-group">
+                            <label for="side-fullname">Full Name</label>
+                            <input type="text" id="side-fullname" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="side-email">Email Address</label>
+                            <input type="email" id="side-email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="side-phone">Phone Number</label>
+                            <input type="tel" id="side-phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="side-degree">Target Level</label>
+                            <select id="side-degree">
+                                <option value="bachelor">Bachelor's Degree</option>
+                                <option value="master">Master's Degree</option>
+                                <option value="diploma">Diploma / Vocations</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="sticky-submit-btn">APPLY NOW</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!-- Sticky Floating Badges (Bottom Right WhatsApp widget & Get free counseling button) -->
+    <div class="sticky-widgets-container">
+        <!-- WhatsApp Talk With Us badge -->
+        <a href="https://wa.me/9779709223262" target="_blank" class="whatsapp-sticky-badge" aria-label="Chat on WhatsApp">
+            <span class="whatsapp-text">Talk with us!</span>
+            <div class="whatsapp-circle-icon"><i class="fa-brands fa-whatsapp"></i></div>
+        </a>
+
+        <!-- Quick Sticky Counselling form popup trigger -->
+        <a href="index.html#application-form-section" class="counselling-sticky-badge">
+            <i class="fa-solid fa-location-arrow"></i> Get Free Counselling
+        </a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-layout-section">
+        <!-- Top Contact & Newsletter Bar -->
+        <div class="footer-top-bar">
+            <div class="section-container footer-top-container">
+                <!-- Newsletter Signup -->
+                <div class="footer-newsletter-block">
+                    <h3 class="newsletter-title"><i class="fa-regular fa-paper-plane"></i> Sign up to our Newsletter</h3>
+                    <form id="footer-newsletter-form" class="newsletter-form">
+                        <input type="email" placeholder="Enter your email address..." required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+
+                <!-- Header Info Badges -->
+                <div class="footer-header-contacts">
+                    <div class="f-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <span>Call Us Hotline</span>
+                            <strong>+977-1-4433221, 4433222</strong>
+                        </div>
+                    </div>
+                    <div class="f-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <span>Email Support</span>
+                            <strong>info@cambridge.edu.np</strong>
+                        </div>
+                    </div>
+                    <div class="f-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <span>Head Office</span>
+                            <strong>Putalisadak, Kathmandu, Nepal</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Footer Links Grid -->
+        <div class="footer-main-body">
+            <div class="section-container footer-grid-4cols">
+                <!-- Col 1: Brand & Branches -->
+                <div class="footer-brand-col">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="assets/images/logo.png" alt="Cambridge Institute Logo" class="footer-logo">
+                    </a>
+                    <p class="footer-brand-desc">
+                        Cambridge Institute is a leading study abroad education consultancy in Nepal helping students study in Australia, UK, USA, Canada, New Zealand, Japan, and Europe with expert counseling and visa support.
+                    </p>
+
+                    <div class="footer-social-row">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+
+                    <div class="footer-branches-tag-cloud">
+                        <h4>Branch Offices Across Nepal</h4>
+                        <div class="branches-badges">
+                            <span>Kathmandu (HO)</span>
+                            <span>Pokhara</span>
+                            <span>Chitwan</span>
+                            <span>Butwal</span>
+                            <span>Biratnagar</span>
+                            <span>Birtamode</span>
+                            <span>Itahari</span>
+                            <span>Parsa</span>
+                            <span>Dang</span>
+                            <span>Hetauda</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="footer-links-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#about"><i class="fa-solid fa-chevron-right"></i> About Cambridge</a></li>
+                        <li><a href="index.html#services"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
+                        <li><a href="index.html#universities"><i class="fa-solid fa-chevron-right"></i> Universities</a></li>
+                        <li><a href="learning-center.html"><i class="fa-solid fa-chevron-right"></i> Cambridge Learning Center</a></li>
+                        <li><a href="destination.html?country=australia"><i class="fa-solid fa-chevron-right"></i> Study Abroad Destinations</a></li>
+                        <li><a href="index.html#news-offers"><i class="fa-solid fa-chevron-right"></i> Blogs and News</a></li>
+                        <li><a href="index.html#testimonials"><i class="fa-solid fa-chevron-right"></i> Testimonials & Reviews</a></li>
+                        <li><a href="index.html#our-branches"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+                        <li><a href="#faq"><i class="fa-solid fa-chevron-right"></i> FAQ's</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Need for Students -->
+                <div class="footer-links-col">
+                    <h3>Need for Students</h3>
+                    <ul>
+                        <li><a href="index.html#services"><i class="fa-solid fa-chevron-right"></i> Career Counseling</a></li>
+                        <li><a href="index.html#application-form-section"><i class="fa-solid fa-chevron-right"></i> Online Application</a></li>
+                        <li><a href="destination.html?country=australia"><i class="fa-solid fa-chevron-right"></i> How to Obtain Visa</a></li>
+                        <li><a href="index.html#services"><i class="fa-solid fa-chevron-right"></i> Student Accommodation</a></li>
+                        <li><a href="#currency" class="link-f-utility" data-tab="currency"><i class="fa-solid fa-chevron-right"></i> Currency Converter</a></li>
+                        <li><a href="#date" class="link-f-utility" data-tab="date"><i class="fa-solid fa-chevron-right"></i> Date Converter</a></li>
+                        <li><a href="#sop" class="link-f-utility" data-tab="sop"><i class="fa-solid fa-chevron-right"></i> SOP Bank</a></li>
+                        <li><a href="#score" class="link-f-utility" data-tab="score"><i class="fa-solid fa-chevron-right"></i> Score Comparison</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Useful Documents -->
+                <div class="footer-links-col">
+                    <h3>Useful Documents</h3>
+                    <ul>
+                        <li><a href="#sop" class="link-f-utility" data-tab="sop"><i class="fa-solid fa-chevron-right"></i> Experience Letter Sample</a></li>
+                        <li><a href="#sop" class="link-f-utility" data-tab="sop"><i class="fa-solid fa-chevron-right"></i> Affidavit / Sponsorship Cert</a></li>
+                        <li><a href="#sop" class="link-f-utility" data-tab="sop"><i class="fa-solid fa-chevron-right"></i> Bio-Data / Resume Format</a></li>
+                        <li><a href="#sop" class="link-f-utility" data-tab="sop"><i class="fa-solid fa-chevron-right"></i> Recommendation Letter</a></li>
+                        <li><a href="#sop" class="link-f-utility" data-tab="sop"><i class="fa-solid fa-chevron-right"></i> Sample Visa Documents</a></li>
+                        <li><a href="index.html#services"><i class="fa-solid fa-chevron-right"></i> 10 Steps to Study Abroad</a></li>
+                    </ul>
+
+                    <div class="footer-accreditation-block">
+                        <h4>Accreditation</h4>
+                        <p>Certified & Recognised Education Agents for Australia, UK, USA & Canada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom-bar">
+            <div class="section-container flex-bottom-bar">
+                <p>&copy; 2026 Cambridge Institute. All Rights Reserved.</p>
+                <div class="bottom-policy-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Off-Canvas Navigation Drawer -->
+    <div id="side-navigation-drawer" class="side-drawer-overlay">
+        <div class="side-drawer-content">
+            <div class="side-drawer-header">
+                <div class="drawer-logo">
+                    <img src="assets/images/logo.png" alt="Cambridge Institute Logo">
+                </div>
+                <button class="close-drawer-btn" id="btn-close-drawer" aria-label="Close Menu">&times;</button>
+            </div>
+            
+            <div class="side-drawer-body">
+                <nav class="drawer-menu-nav">
+                    <ul class="drawer-menu-links">
+                        <li class="drawer-has-submenu">
+                            <div class="drawer-link-wrapper">
+                                <a href="index.html#services" class="drawer-menu-link">OUR SERVICES</a>
+                                <button class="drawer-submenu-toggle" aria-label="Toggle Submenu"><i class="fa-solid fa-chevron-down"></i></button>
+                            </div>
+                            <ul class="drawer-submenu">
+                                <li><a href="index.html#services" class="drawer-sub-link">Study Abroad Counselling</a></li>
+                                <li><a href="index.html#services" class="drawer-sub-link">University Application Support</a></li>
+                                <li><a href="index.html#services" class="drawer-sub-link">Scholarship Guidance</a></li>
+                                <li><a href="index.html#services" class="drawer-sub-link">Visa Assistance</a></li>
+                                <li><a href="index.html#services" class="drawer-sub-link">Pre-Departure & Accommodation</a></li>
+                            </ul>
+                        </li>
+                        <li class="drawer-has-submenu">
+                            <div class="drawer-link-wrapper">
+                                <a href="index.html#destinations" class="drawer-menu-link">STUDY ABROAD</a>
+                                <button class="drawer-submenu-toggle" aria-label="Toggle Submenu"><i class="fa-solid fa-chevron-down"></i></button>
+                            </div>
+                            <ul class="drawer-submenu drawer-grid-submenu">
+                                <li><a href="destination.html?country=australia" class="drawer-sub-link"><img src="https://flagcdn.com/w80/au.png" alt="Australia"> Australia</a></li>
+                                <li><a href="destination.html?country=usa" class="drawer-sub-link"><img src="https://flagcdn.com/w80/us.png" alt="USA"> USA</a></li>
+                                <li><a href="destination.html?country=uk" class="drawer-sub-link"><img src="https://flagcdn.com/w80/gb.png" alt="UK"> UK</a></li>
+                                <li><a href="destination.html?country=canada" class="drawer-sub-link"><img src="https://flagcdn.com/w80/ca.png" alt="Canada"> Canada</a></li>
+                                <li><a href="destination.html?country=newzealand" class="drawer-sub-link"><img src="https://flagcdn.com/w80/nz.png" alt="New Zealand"> New Zealand</a></li>
+                                <li><a href="destination.html?country=japan" class="drawer-sub-link"><img src="https://flagcdn.com/w80/jp.png" alt="Japan"> Japan</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="learning-center.html" class="drawer-menu-link">LEARNING CENTER</a></li>
+                        <li><a href="universities.html" class="drawer-menu-link">UNIVERSITY</a></li>
+                        <li class="drawer-has-submenu">
+                            <div class="drawer-link-wrapper">
+                                <a href="index.html#about" class="drawer-menu-link">ABOUT US</a>
+                                <button class="drawer-submenu-toggle" aria-label="Toggle Submenu"><i class="fa-solid fa-chevron-down"></i></button>
+                            </div>
+                            <ul class="drawer-submenu">
+                                <li><a href="index.html#about" class="drawer-sub-link">About Cambridge</a></li>
+                                <li><a href="index.html#why-choose-us" class="drawer-sub-link">Why Choose Us</a></li>
+                                <li><a href="index.html#our-team" class="drawer-sub-link">Our Team</a></li>
+                                <li><a href="index.html#testimonials" class="drawer-sub-link">Student Stories</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html#our-branches" class="drawer-menu-link">OUR BRANCHES</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="drawer-contact-info">
+                    <h4>Contact Us</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> Putalisadak, Kathmandu, Nepal</p>
+                    <p><i class="fa-solid fa-phone"></i> +977-1-4433221, 4433222</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@cambridge.edu.np</p>
+                </div>
+                
+                <div class="drawer-socials">
+                    <a href="#" class="social-circle-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-circle-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-circle-icon"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-circle-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                
+                <div class="drawer-cta-action">
+                    <a href="index.html#application-form-section" class="speak-with-us-btn drawer-cta-btn">SPEAK WITH US</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- News and offers notification modal -->
+    <div class="custom-modal-overlay hidden" id="news-offers-modal">
+        <div class="custom-modal-box">
+            <button class="close-modal-x" id="close-news-modal">&times;</button>
+            <h3 class="modal-title-header"><i class="fa-solid fa-bullhorn"></i> News & Special Offers</h3>
+            <p class="modal-description-paragraph">Latest notices from Cambridge Institute coaching classes and university visits.</p>
+            <div class="news-list-container">
+                <div class="news-item-card">
+                    <span class="news-date">July 2026 Visit</span>
+                    <h4>University of Windsor Info Session</h4>
+                    <p>Meet Canadian university representatives at our Putalisadak office on July 25th, 2:00 PM onwards. Bring your transcripts for profile assessment.</p>
+                </div>
+                <div class="news-item-card">
+                    <span class="news-date">IELTS/PTE Discount</span>
+                    <h4>Monsoon Coaching Offer</h4>
+                    <p>Get a flat 30% off on all IELTS and PTE morning coaching batches. Free mock tests every Sunday. Code: MONSOON30.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Destination detail page dynamic loading script -->
+    <script src="js/destination-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Parse target country from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const countryKey = urlParams.get('country') || 'australia';
+            
+            const data = window.destinationData[countryKey];
+            if (!data) {
+                // Default fallback if not found
+                window.location.href = 'index.html';
+                return;
+            }
+
+            // Update title
+            document.title = `Study in ${data.name} | Cambridge Institute`;
+            
+            // Update hero
+            const hero = document.getElementById('dest-hero');
+            if (hero) hero.style.backgroundImage = `url('${data.banner}')`;
+            
+            document.getElementById('dest-flag-img').src = `https://flagcdn.com/w160/${data.flagCode}.png`;
+            document.getElementById('dest-title').textContent = `Study in ${data.name}`;
+            document.getElementById('dest-tagline').textContent = data.tagline;
+            
+            // Update stats
+            document.getElementById('stat-intakes').textContent = data.intakes;
+            document.getElementById('stat-fees').textContent = data.fees;
+            document.getElementById('stat-living').textContent = data.livingCost;
+            document.getElementById('stat-ielts').textContent = data.ielts;
+            
+            // Update intro
+            document.getElementById('dest-intro').textContent = data.intro;
+            
+            // Populate Universities
+            const uniList = document.getElementById('dest-unis');
+            uniList.innerHTML = '';
+            data.universities.forEach(uni => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fa-solid fa-graduation-cap"></i> ${uni}`;
+                uniList.appendChild(li);
+            });
+            
+            // Populate Requirements
+            const reqList = document.getElementById('dest-reqs');
+            reqList.innerHTML = '';
+            data.requirements.forEach(req => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${req}</span>`;
+                reqList.appendChild(li);
+            });
+
+            // Bind Inquiry Form Submit
+            const inquiryForm = document.getElementById('dest-inquiry-form');
+            inquiryForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert(`Thank you! Your inquiry for Study in ${data.name} has been submitted successfully. A counselor will contact you shortly.`);
+                inquiryForm.reset();
+            });
+        });
+    </script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
