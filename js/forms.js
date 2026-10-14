@@ -78,7 +78,7 @@ export function initForms() {
             const input = newsletterForm.querySelector('input[type="email"]');
             const email = input ? input.value : "";
             
-            alert(`Thank you! ${email} has been subscribed to the Cambridge Institute newsletter.`);
+            alert(`Thank you! ${email} has been subscribed to the Study to Abroad newsletter.`);
             newsletterForm.reset();
         });
     }

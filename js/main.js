@@ -1,5 +1,5 @@
 /**
- * Cambridge Institute Website — Main Application Entry Point
+ * Study to Abroad Website — Main Application Entry Point
  */
 
 import { initNavigation } from './navigation.js';

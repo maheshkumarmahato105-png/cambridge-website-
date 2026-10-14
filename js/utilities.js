@@ -7,25 +7,25 @@ export const branchData = {
         name: "Putalisadak Head Office",
         desc: "Way to Bagbazar (Opposite Nepal Investment Mega Bank), Kathmandu, Nepal",
         phone: "+977-1-4433221, 4433222",
-        email: "info@cambridge.edu.np"
+        email: "info@studytoabroad.edu.np"
     },
     lalitpur: {
         name: "Lagankhel Branch (Lalitpur)",
         desc: "Ground Floor, Lalitpur Mall, Lagankhel, Lalitpur, Nepal",
         phone: "+977-1-5544332",
-        email: "lalitpur@cambridge.edu.np"
+        email: "lalitpur@studytoabroad.edu.np"
     },
     pokhara: {
         name: "Chipledhunga Branch (Pokhara)",
         desc: "Second Floor, Pokhara Trade Mall, Chipledhunga, Pokhara, Nepal",
         phone: "+977-61-532211",
-        email: "pokhara@cambridge.edu.np"
+        email: "pokhara@studytoabroad.edu.np"
     },
     chitwan: {
         name: "Chaubiskoti Branch (Chitwan)",
         desc: "Opposite Bharatpur Hospital, Chaubiskoti, Bharatpur, Chitwan, Nepal",
         phone: "+977-56-523311",
-        email: "chitwan@cambridge.edu.np"
+        email: "chitwan@studytoabroad.edu.np"
     }
 };
 

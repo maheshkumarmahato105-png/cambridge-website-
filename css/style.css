@@ -1,11 +1,11 @@
 /* ==========================================
-   CAMBRIDGE INSTITUTE DESIGN SYSTEM
+   STUDY TO ABROAD DESIGN SYSTEM
    ========================================== */
 
 :root {
     --brand-blue: #00245B;       /* Navy Primary */
     --brand-blue-light: #e6edf7;
-    --brand-red: #E60012;        /* Cambridge Red Accent */
+    --brand-red: #E60012;        /* Study to Abroad Red Accent */
     --brand-red-hover: #c8000f;
     --brand-green: #25D366;      /* Success Accent */
     --text-dark: #333333;        /* Dark Body Text */
@@ -205,28 +205,85 @@ section {
 }
 
 .logo-icon-svg {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    gap: 12px;
+    text-decoration: none;
     z-index: 10;
 }
 
 .logo-icon-svg img {
-   height: 44px;
+   height: 48px;
    width: auto;
    display: block;
-   background-color: var(--brand-red);
-   padding: 5px 10px;
-   border-radius: 4px;
+   object-fit: contain;
+   transition: transform 0.25s ease;
+}
+
+.logo-icon-svg:hover img {
+   transform: scale(1.05);
+}
+
+.logo-text-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.15;
+}
+
+.logo-main-text {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--brand-blue);
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+
+.logo-main-text span {
+    color: var(--brand-red);
+}
+
+.logo-sub-text {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #4b5563;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.footer-logo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    margin-bottom: 20px;
 }
 
 .footer-logo {
-    max-height: 45px;
+    max-height: 48px;
     width: auto;
     display: block;
-    background-color: var(--brand-red);
-    padding: 6px 12px;
-    border-radius: 4px;
-    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0;
+}
+
+.footer-logo-link .logo-main-text {
+    color: #ffffff;
+    font-size: 1.25rem;
+}
+
+.footer-logo-link .logo-main-text span {
+    color: #ff4d5a;
+}
+
+.footer-logo-link .logo-sub-text {
+    color: rgba(255, 255, 255, 0.75);
 }
 
 /* Menu Links */
@@ -534,21 +591,23 @@ section {
 }
 
 .speak-with-us-btn {
-    background-color: var(--brand-red);
-    color: var(--bg-white);
+    background-color: #FFaa00;
+    color: #00245B;
     font-family: var(--font-heading);
     font-weight: 700;
     font-size: 0.85rem;
     padding: 12px 24px;
     border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(230, 0, 18, 0.2);
+    box-shadow: 0 4px 14px rgba(255, 170, 0, 0.32);
     display: inline-block;
     transition: var(--transition-smooth);
 }
 
 .speak-with-us-btn:hover {
-    background-color: var(--brand-red-hover);
+    background-color: #e69900;
+    color: #00245B;
     transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(255, 170, 0, 0.42);
 }
 
 .nav-hamburger-toggle {
@@ -646,13 +705,39 @@ section {
     margin: 0 auto;
 }
 
+.drawer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
 .drawer-logo img, .drawer-header-block img {
-    max-height: 42px;
+    max-height: 44px;
     width: auto;
     display: block;
-    background-color: var(--brand-red);
-    padding: 4px 10px;
-    border-radius: 4px;
+    object-fit: contain;
+}
+
+.drawer-logo .logo-main-text {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--brand-blue);
+    letter-spacing: -0.02em;
+}
+
+.drawer-logo .logo-main-text span {
+    color: var(--brand-red);
+}
+
+.drawer-logo .logo-sub-text {
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #4b5563;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .close-drawer-btn {
@@ -1063,7 +1148,7 @@ section {
 }
 
 /* ==========================================
-   WHY STUDENTS CHOOSE CAMBRIDGE
+   WHY STUDENTS CHOOSE STUDY TO ABROAD
    ========================================== */
 .why-choose-us-section {
     background-color: var(--bg-white);
@@ -1115,7 +1200,7 @@ section {
 }
 
 /* ==========================================
-   CAMBRIDGE GLOBAL: WHAT'S NEXT SECTION
+   STUDY TO ABROAD GLOBAL: WHAT'S NEXT SECTION
    ========================================== */
 .whats-next-section {
     background-color: var(--bg-light);
@@ -1894,8 +1979,8 @@ section {
 }
 
 .counselling-sticky-badge {
-    background-color: var(--brand-red);
-    color: var(--bg-white);
+    background-color: #FFaa00;
+    color: #00245B;
     border-radius: 30px;
     padding: 12px 20px;
     font-family: var(--font-heading);
@@ -1904,12 +1989,14 @@ section {
     display: flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 4px 15px rgba(230, 0, 18, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 170, 0, 0.35);
 }
 
 .counselling-sticky-badge:hover {
-    background-color: var(--brand-red-hover);
+    background-color: #e69900;
+    color: #00245B;
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 170, 0, 0.45);
 }
 
 /* ==========================================
@@ -2300,19 +2387,22 @@ section {
 }
 
 .dest-book-btn {
-    background-color: var(--brand-red);
-    color: var(--bg-white);
+    background-color: #FFaa00;
+    color: #00245B;
     font-family: var(--font-heading);
     font-weight: 700;
     padding: 12px 28px;
     border-radius: 6px;
     font-size: 0.9rem;
-    box-shadow: 0 4px 12px rgba(230, 0, 18, 0.2);
+    box-shadow: 0 4px 14px rgba(255, 170, 0, 0.32);
+    transition: var(--transition-smooth);
 }
 
 .dest-book-btn:hover {
-    background-color: var(--brand-red-hover);
+    background-color: #e69900;
+    color: #00245B;
     transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(255, 170, 0, 0.42);
 }
 
 /* Utilities Modal Tabs */
@@ -2560,7 +2650,7 @@ section {
 }
 
 /* ==========================================
-   CAMBRIDGE LEARNING CENTER SECTION
+   STUDY TO ABROAD LEARNING CENTER SECTION
    ========================================== */
 .learning-center-section {
     padding: 70px 0;
